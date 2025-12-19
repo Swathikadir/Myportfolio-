@@ -1,3 +1,4 @@
+My portfolio 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,88 +6,210 @@
 <title>Swathi K</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
-body{background:#eef3f7;color:#1f2d3d;line-height:1.6;}
+
+:root{
+  --royal-gold:#c9a24d;
+  --royal-blue:#3b82f6;
+  --border-base:rgba(148,163,184,0.25);
+}
+
+body{
+  background:#0b1120;
+  color:#e5e7eb;
+  line-height:1.7;
+}
+
 img{width:100%;border-radius:16px;}
 
 header{
-  background:#e6edf4;
+  background:#020617;
   text-align:center;
-  padding:20px;
+  padding:22px;
   position:sticky;
   top:0;
+  border-bottom:1px solid var(--border-base);
+  z-index:10;
 }
-header h2{font-family:'Playfair Display',serif;font-size:28px;}
 
-.hero,.section,.journey{padding:60px 10%;}
-.hero{background:linear-gradient(135deg,#e8f0f7,#f6f9fc);}
-
-.section h2,.journey h2{
+header h2{
   font-family:'Playfair Display',serif;
-  font-size:30px;
+  font-size:28px;
+}
+
+.hero,.section,.journey{padding:70px 10%;}
+
+.hero{
+  background:radial-gradient(circle at top,#020617,#020617);
+}
+
+.hero h1{
+  font-size:38px;
+  font-family:'Playfair Display',serif;
+  margin-bottom:10px;
+}
+
+/* Quote */
+.hero .quote{
+  font-style:italic;
+  color:#c7d2fe;
+  margin-bottom:22px;
+  border-left:3px solid var(--royal-gold);
+  padding-left:14px;
+}
+
+.hero p{
+  max-width:720px;
+  color:#cbd5f5;
   margin-bottom:30px;
 }
 
-.card{
-  background:#fff;
-  padding:25px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  margin-bottom:20px;
+.section h2,.journey h2{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  margin-bottom:35px;
 }
 
-.grid,.projects,.journey-grid,.cert-grid,.contact-box{
+/* Royal card system */
+.card,
+.skill-card,
+.journey-card,
+.cert-card,
+.contact-card{
+  background:#020617;
+  position:relative;
+  padding:26px;
+  border-radius:18px;
+  margin-bottom:20px;
+  transition:0.4s ease;
+}
+
+.card::before,
+.skill-card::before,
+.journey-card::before,
+.cert-card::before,
+.contact-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:1px;
+  border-radius:18px;
+  background:linear-gradient(135deg,var(--royal-gold),var(--royal-blue));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+
+.card:hover,
+.skill-card:hover,
+.journey-card:hover,
+.cert-card:hover,
+.contact-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px rgba(201,162,77,0.15);
+}
+
+/* Grids */
+.grid,.projects,.journey-grid,.cert-grid,.contact-box,.skills-grid{
   display:grid;
   gap:25px;
 }
 
-.grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
 .projects,.journey-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
-.cert-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.cert-grid,.skills-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
 
-.skill-card span,.tags span{
+.skill-card h4{margin-bottom:14px;}
+
+.skill-icons{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(90px,1fr));
+  gap:16px;
+  text-align:center;
+}
+
+.skill-icons div{
+  position:relative;
+  padding:12px;
+  border-radius:14px;
+}
+
+.skill-icons div::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:1px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--royal-blue),var(--royal-gold));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+
+.skill-icons img{
+  width:36px;
+  height:36px;
+  margin-bottom:6px;
+  background:#fff;
+  padding:4px;
+  border-radius:8px;
+}
+
+.skill-icons span{
+  font-size:12px;
+  color:#cbd5f5;
+}
+
+.project-card img{height:180px;object-fit:cover;}
+.project-card div{padding:20px;}
+
+.company{
+  font-size:13px;
+  color:#93c5fd;
+  font-weight:600;
+}
+
+.tags span{
   display:inline-block;
-  background:#e7f0f8;
   padding:6px 14px;
   border-radius:20px;
   margin:5px;
   font-size:12px;
+  position:relative;
 }
 
-.project-card{overflow:hidden;}
-.project-card img{height:180px;object-fit:cover;}
-.project-card div{padding:20px;}
-
-.journey-card,.cert-card{
-  background:#fff;
-  padding:25px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-.company{
-  font-size:13px;
-  color:#6b8fb3;
-  font-weight:600;
-}
-
-.contact-card{
-  background:#6b9ec6;
-  color:#fff;
-  padding:25px;
+.tags span::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  padding:1px;
   border-radius:20px;
-  text-align:center;
+  background:linear-gradient(135deg,var(--royal-gold),var(--royal-blue));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
 }
 
-footer{text-align:center;padding:30px;font-size:14px;}
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:14px;
+  color:#94a3b8;
+  border-top:1px solid var(--border-base);
+}
 
 @media(max-width:768px){
-  .hero,.section,.journey{padding:40px 6%;}
+  .hero,.section,.journey{padding:50px 6%;}
   header h2{font-size:22px;}
-  .section h2,.journey h2{font-size:24px;}
+  .section h2,.journey h2{font-size:26px;}
 }
 </style>
 </head>
@@ -98,17 +221,69 @@ footer{text-align:center;padding:30px;font-size:14px;}
 </header>
 
 <section class="hero">
-  <h1>AI & Data Science Portfolio</h1>
+  <h1>My Portfolio</h1>
+  <div class="quote">
+    “Artificial Intelligence is not the future — it is the present shaping tomorrow.”
+  </div>
   <p>Final-year AI & Data Science student skilled in Python, SQL, Power BI, Tableau, Machine Learning and Data Analytics.</p>
   <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200">
 </section>
 
 <section class="section">
   <h2>Education</h2>
-
   <div class="card">B.Tech Artificial Intelligence & Data Science – CGPA 8.4 / 10</div>
   <div class="card">HSC – 83.5%</div>
   <div class="card">SSLC – 84.8%</div>
+</section>
+
+<section class="section">
+  <h2>My Skills</h2>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <h4>Programming</h4>
+      <div class="skill-icons">
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><span>Python</span></div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"><span>SQL</span></div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><span>HTML</span></div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><span>CSS</span></div>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h4>Libraries</h4>
+      <div class="skill-icons">
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"><span>Pandas</span></div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"><span>NumPy</span></div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg"><span>Matplotlib</span></div>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h4>Data Visualization</h4>
+      <div class="skill-icons">
+        <div><img src="https://cdn.worldvectorlogo.com/logos/power-bi.svg"><span>Power BI</span></div>
+        <div><img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg"><span>Tableau</span></div>
+        <div><img src="https://cdn.worldvectorlogo.com/logos/microsoft-excel-2013.svg"><span>Excel</span></div>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <h4>Data Analysis</h4>
+      <p>Data Cleaning, Exploratory Data Analysis (EDA)</p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Machine Learning</h4>
+      <p>Classification, Regression, Supervised & Unsupervised Learning</p>
+    </div>
+
+    <div class="skill-card">
+      <h4>Professional Skills</h4>
+      <p>Enthusiastic about learning, Adaptable, Attention to Detail</p>
+    </div>
+
+  </div>
 </section>
 
 <section class="section">
@@ -119,7 +294,7 @@ footer{text-align:center;padding:30px;font-size:14px;}
       <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800">
       <div>
         <h3>Skincare Recommendation App</h3>
-        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        <span>HTML,</span><span>CSS,</span><span>JavaScript</span>
       </div>
     </div>
 
@@ -127,7 +302,7 @@ footer{text-align:center;padding:30px;font-size:14px;}
       <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800">
       <div>
         <h3>Fraud Detection System</h3>
-        <span>Python</span><span>Machine Learning</span>
+        <span>Python,</span><span>Machine Learning</span>
       </div>
     </div>
 
@@ -135,7 +310,7 @@ footer{text-align:center;padding:30px;font-size:14px;}
       <img src="https://images.unsplash.com/photo-1504270997636-07ddfbd48945?w=800">
       <div>
         <h3>Sales Insights Dashboard</h3>
-        <span>Power BI</span><span>Tableau</span>
+        <span>Power BI,</span><span>Tableau</span>
       </div>
     </div>
 
@@ -164,8 +339,7 @@ footer{text-align:center;padding:30px;font-size:14px;}
     </div>
 
     <div class="journey-card">
-      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=60">
-      
+      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800">
       <span class="company">MYINCEPTION TECH</span>
       <h3>Python Internship</h3>
       <p>Worked on Python scripting, automation, and basic data processing tasks.</p>
@@ -177,10 +351,8 @@ footer{text-align:center;padding:30px;font-size:14px;}
   <h2 style="margin-top:50px;">Certifications</h2>
 
   <div class="cert-grid">
-
     <div class="cert-card">
-<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=60">
-
+      <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600">
       <h3>Python Programming</h3>
       <span>Coursera</span>
     </div>
@@ -202,7 +374,6 @@ footer{text-align:center;padding:30px;font-size:14px;}
       <h3>Data Engineering & Big Data</h3>
       <span>GUVI</span>
     </div>
-
   </div>
 </section>
 
@@ -221,4 +392,3 @@ footer{text-align:center;padding:30px;font-size:14px;}
 
 </body>
 </html>
-
