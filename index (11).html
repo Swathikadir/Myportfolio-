@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Swathi K</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#eef3f7;color:#1f2d3d;line-height:1.6;}
+img{width:100%;border-radius:16px;}
+
+header{
+  background:#e6edf4;
+  text-align:center;
+  padding:20px;
+  position:sticky;
+  top:0;
+}
+header h2{font-family:'Playfair Display',serif;font-size:28px;}
+
+.hero,.section,.journey{padding:60px 10%;}
+.hero{background:linear-gradient(135deg,#e8f0f7,#f6f9fc);}
+
+.section h2,.journey h2{
+  font-family:'Playfair Display',serif;
+  font-size:30px;
+  margin-bottom:30px;
+}
+
+.card{
+  background:#fff;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom:20px;
+}
+
+.grid,.projects,.journey-grid,.cert-grid,.contact-box{
+  display:grid;
+  gap:25px;
+}
+
+.grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+.projects,.journey-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+.cert-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+
+.skill-card span,.tags span{
+  display:inline-block;
+  background:#e7f0f8;
+  padding:6px 14px;
+  border-radius:20px;
+  margin:5px;
+  font-size:12px;
+}
+
+.project-card{overflow:hidden;}
+.project-card img{height:180px;object-fit:cover;}
+.project-card div{padding:20px;}
+
+.journey-card,.cert-card{
+  background:#fff;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.company{
+  font-size:13px;
+  color:#6b8fb3;
+  font-weight:600;
+}
+
+.contact-card{
+  background:#6b9ec6;
+  color:#fff;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+}
+
+footer{text-align:center;padding:30px;font-size:14px;}
+
+@media(max-width:768px){
+  .hero,.section,.journey{padding:40px 6%;}
+  header h2{font-size:22px;}
+  .section h2,.journey h2{font-size:24px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Swathi K</h2>
+</header>
+
+<section class="hero">
+  <h1>AI & Data Science Portfolio</h1>
+  <p>Final-year AI & Data Science student skilled in Python, SQL, Power BI, Tableau, Machine Learning and Data Analytics.</p>
+  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200">
+</section>
+
+<section class="section">
+  <h2>Education</h2>
+
+  <div class="card">B.Tech Artificial Intelligence & Data Science – CGPA 8.4 / 10</div>
+  <div class="card">HSC – 83.5%</div>
+  <div class="card">SSLC – 84.8%</div>
+</section>
+
+<section class="section">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <div class="project-card card">
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800">
+      <div>
+        <h3>Skincare Recommendation App</h3>
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+      </div>
+    </div>
+
+    <div class="project-card card">
+      <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800">
+      <div>
+        <h3>Fraud Detection System</h3>
+        <span>Python</span><span>Machine Learning</span>
+      </div>
+    </div>
+
+    <div class="project-card card">
+      <img src="https://images.unsplash.com/photo-1504270997636-07ddfbd48945?w=800">
+      <div>
+        <h3>Sales Insights Dashboard</h3>
+        <span>Power BI</span><span>Tableau</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="journey">
+  <h2>Professional Journey</h2>
+
+  <div class="journey-grid">
+
+    <div class="journey-card">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800">
+      <span class="company">DELOITTE</span>
+      <h3>Data Analytics Job Simulation</h3>
+      <p>Performed data cleaning, analysis, visualization, and business reporting.</p>
+      <div class="tags"><span>Analytics</span><span>Consulting</span></div>
+    </div>
+
+    <div class="journey-card">
+      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800">
+      <span class="company">PICTUSCODE</span>
+      <h3>Web Development Internship</h3>
+      <p>Built responsive web pages and improved UI/UX using HTML, CSS, and JavaScript.</p>
+      <div class="tags"><span>Web Dev</span><span>Frontend</span></div>
+    </div>
+
+    <div class="journey-card">
+      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=60">
+      
+      <span class="company">MYINCEPTION TECH</span>
+      <h3>Python Internship</h3>
+      <p>Worked on Python scripting, automation, and basic data processing tasks.</p>
+      <div class="tags"><span>Python</span><span>Automation</span></div>
+    </div>
+
+  </div>
+
+  <h2 style="margin-top:50px;">Certifications</h2>
+
+  <div class="cert-grid">
+
+    <div class="cert-card">
+<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=60">
+
+      <h3>Python Programming</h3>
+      <span>Coursera</span>
+    </div>
+
+    <div class="cert-card">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600">
+      <h3>Power BI, Excel & SQL</h3>
+      <span>Infosys Springboard</span>
+    </div>
+
+    <div class="cert-card">
+      <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600">
+      <h3>Data Science & Analytics</h3>
+      <span>HP Life</span>
+    </div>
+
+    <div class="cert-card">
+      <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600">
+      <h3>Data Engineering & Big Data</h3>
+      <span>GUVI</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2>Contact</h2>
+  <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?w=1200">
+  <div class="contact-box">
+    <div class="contact-card">📞 +91 90436 27376</div>
+    <div class="contact-card">✉️ swathikadir23@gmail.com</div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Swathi K · Portfolio
+</footer>
+
+</body>
+</html>
+
